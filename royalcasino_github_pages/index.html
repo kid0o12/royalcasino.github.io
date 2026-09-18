@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Royal Casino</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}:root{--bg:#06070b;--panel:#10141d;--gold:#f5c451;--muted:#858b9c;--line:rgba(255,255,255,.08)}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;min-height:100vh;color:#fff;background:radial-gradient(circle at 20% 10%,rgba(245,196,81,.12),transparent 28%),radial-gradient(circle at 80% 80%,rgba(71,123,255,.10),transparent 28%),#06070b}
+header{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 34px;border-bottom:1px solid var(--line);background:rgba(7,8,13,.94);position:sticky;top:0;z-index:10}.logo{font-size:21px;font-weight:900;letter-spacing:2px}.logo span{color:var(--gold)}
+nav{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}nav a{color:#aeb4c3;text-decoration:none;border:1px solid var(--line);background:#11141d;border-radius:11px;padding:10px 13px;font-weight:700;font-size:13px}nav a:hover,nav a.active{color:#fff;border-color:rgba(245,196,81,.45);background:#191b25}.coin{padding:10px 15px;border:1px solid var(--line);border-radius:12px;color:var(--gold);background:#11141d;white-space:nowrap}
+.wrap{width:min(1120px,calc(100% - 32px));margin:0 auto;padding:58px 0 80px}.hero{text-align:center;margin-bottom:34px}.hero h1{font-size:52px;letter-spacing:-2px}.hero p{color:var(--muted);margin-top:10px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{display:block;text-decoration:none;color:#fff;padding:25px;border-radius:20px;background:linear-gradient(150deg,#151923,#0d1118);border:1px solid var(--line);transition:.2s}.card:hover{transform:translateY(-4px);border-color:rgba(245,196,81,.38);box-shadow:0 18px 55px rgba(0,0,0,.3)}.icon{font-size:38px}.card h2{margin-top:14px;font-size:17px}.card p{margin-top:6px;color:var(--muted);font-size:12px}
+.note{margin-top:25px;text-align:center;color:#777f91;font-size:12px}.daily{border-color:rgba(245,196,81,.35);box-shadow:inset 0 0 30px rgba(245,196,81,.04)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}header{justify-content:center;flex-wrap:wrap}.logo{width:100%;text-align:center}}@media(max-width:560px){.wrap{padding-top:35px}.hero h1{font-size:38px}.grid{grid-template-columns:1fr}nav a{font-size:12px;padding:9px 10px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">ROYAL <span>CASINO</span></div>
+  <nav>
+    <a href="casino.html">Casino</a><a href="farm.html">Farm</a><a href="ruleta.html">🎡 Ruleta diaria</a><a href="inventario.html">Inventario</a><a href="upgrade.html">Upgrade</a><a href="battles.html">Battles</a><a href="crash.html">Crash</a><a href="slots.html">Slots</a><a href="tienda.html">Tienda</a>
+  </nav>
+  <div class="coin">🪙 <span id="coins">0</span></div>
+</header>
+<main class="wrap">
+<section class="hero"><h1>ROYAL CASINO</h1><p>Centro principal · elige el juego</p></section>
+<section class="grid">
+<a class="card" href="casino.html"><div class="icon">🎰</div><h2>Casino</h2><p>Ruleta y Fire Numbers</p></a>
+<a class="card" href="farm.html"><div class="icon">🪙</div><h2>Farm</h2><p>Consigue monedas</p></a>
+<a class="card daily" href="ruleta.html"><div class="icon">🎡</div><h2>Ruleta diaria</h2><p>1 giro cada 24 horas · hasta 1000 🪙</p></a>
+<a class="card" href="inventario.html"><div class="icon">🎒</div><h2>Inventario</h2><p>Tus objetos</p></a>
+<a class="card" href="upgrade.html"><div class="icon">⚡</div><h2>Upgrade</h2><p>Mejora objetos</p></a>
+<a class="card" href="battles.html"><div class="icon">⚔️</div><h2>Battles</h2><p>Batallas de cajas</p></a>
+<a class="card" href="crash.html"><div class="icon">🚀</div><h2>Crash</h2><p>Multiplicador en directo</p></a>
+<a class="card" href="slots.html"><div class="icon">🎰</div><h2>Slots</h2><p>Máquina de slots</p></a>
+<a class="card" href="tienda.html"><div class="icon">🛍️</div><h2>Tienda</h2><p>Compra objetos</p></a>
+</section>
+<div class="note">Todos los archivos son locales. Extrae la carpeta completa antes de abrir index.html.</div>
+</main>
+<script>
+(function(){
+ const key='royalCoins';
+ try{const n=Number(localStorage.getItem(key)||0);document.getElementById('coins').textContent=n.toLocaleString();}catch(e){document.getElementById('coins').textContent='0';}
+})();
+</script>
+</body></html>
